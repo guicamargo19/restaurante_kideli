@@ -1,0 +1,122 @@
+@import "maps.less";
+
+@breakpointMobile: ~"(max-width: 767px)";
+
+.styleRepeat(@background: #colors[mainColor]; @color: #colors[whiteColor];) {
+    background-color: @background;
+    color: @color;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: #fonts[mainFont];
+}
+
+.navbar {
+    background-color: #colors[mainColor];
+
+    .navbar-brand {
+        color: #colors[whiteColor];
+        
+        &:hover {
+            color: #colors[whiteColor];
+         }
+    }
+}
+
+#cabecalho .nav .nav-link {
+    color: #colors[whiteColor];
+
+    &.active {
+        .styleRepeat(#colors[whiteColor]; #colors[mainColor];)
+    }
+}
+
+.nav-cardapio .nav-link {
+    
+    &:hover {
+        color: #colors[mainColor];
+    }
+
+    &.active {
+        .styleRepeat();
+
+        &:hover {
+            color: #colors[whiteColor];
+        }
+    }
+}
+
+.navbar-toggler {
+    background-color: #colors[navbarColor];
+}
+
+.section-title {
+    font-family: #fonts[titleFont];
+}
+
+.text-colored {
+    color: #colors[mainColor];
+}
+
+#sobre,
+#cardapio {
+    background-color: #colors[navbarColor];
+}
+
+#contato {
+    button {
+        .styleRepeat()
+    }
+    textarea {
+        resize: none;
+    }
+}
+
+.social-links {
+
+    li {
+        list-style: none;
+        display: inline;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.mensagem-enviada {
+    .styleRepeat();
+    display: none;
+    
+    p {
+        font-size: 18px;
+    }
+}
+
+.error {
+    color: #colors[errorColor];
+}
+
+.container-footer {
+    .styleRepeat();
+}
+
+@media @breakpointMobile {
+    .carousel-item {
+        img {
+            height: 280px;
+        }
+    }
+
+    header {
+        nav {
+            margin-top: 12px;
+       }
+    }
+}
